@@ -28,3 +28,47 @@ This project is part of my hands-on learning journey with **Docker and Cloud fun
 ---
 
 ## 📂 Project Structure
+dockerize-react-app/
+├── Dockerfile
+├── .dockerignore
+├── package.json
+├── package-lock.json
+├── public/
+└── src/
+
+---
+
+## 🐳 Docker Approach (Important)
+
+This project uses a **multi‑stage Docker build**, which is the industry‑recommended way for frontend applications.
+
+### Stage 1 – Build
+- Uses a Node.js image
+- Installs dependencies
+- Builds the React app into static files
+
+### Stage 2 – Serve
+- Uses a lightweight Nginx image
+- Serves the production build
+- No Node.js in the final image (smaller and faster)
+
+---
+
+## ✅ Prerequisites
+
+Before running this project, make sure you have:
+
+- Docker installed  
+  👉 https://docs.docker.com/get-docker/
+
+No need to install Node.js locally if you only want to run the Docker container.
+
+---
+
+## 🚀 How to Run This Project (Docker Way)
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/12AnshulAgarwal/dockerize-react-app.git
+cd dockerize-react-app
